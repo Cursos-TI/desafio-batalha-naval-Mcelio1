@@ -6,6 +6,7 @@ int main() {
 
     // Vetor com as letras das colunas
     char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    printf ("Tabuleiro de Batalha Naval - Play\n");
 
     // Imprime as letras das colunas no topo (A a J)
     printf("   ");  
@@ -29,7 +30,7 @@ int main() {
     int navio1_x = 2;  
     int navio1_y = 1;  
     int tamanhoNavio1 = 3; 
-    
+
     // Coloca o navio 1 no tabuleiro (horizontal)
     for (int i = 0; i < tamanhoNavio1; i++) {
         tabuleiro[navio1_y][navio1_x + i] = 3; 
