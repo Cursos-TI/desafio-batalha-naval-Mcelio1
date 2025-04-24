@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define TAM 10  // Define o tamanho do tabuleiro
+
 int main() {
     // Tamanho do tabuleiro
     int tabuleiro[10][10] = {0};  // Declaração e inicialização do tabuleiro 10x10 com 0 (água)
@@ -36,7 +38,7 @@ int main() {
         tabuleiro[navio1_y][navio1_x + i] = 3; 
     }
 
-    // Definindo a posição do segundo navio (vertical)
+    // Definindo a posição do segundo naviovertical)
     int navio2_x = 5; 
     int navio2_y = 3;  
     int tamanhoNavio2 = 3; 
@@ -47,7 +49,7 @@ int main() {
     }
 
     // Exibe o tabuleiro com os navios posicionados
-    printf("\nTabuleiro de Batalha Naval:\n");
+    printf("\nTabuleiro de Batalha Naval N1:\n");
 
     // Imprime novamente as letras das colunas no topo
     printf("   ");
@@ -67,13 +69,45 @@ int main() {
         printf("\n");  
     }
 
+    // 3º navio - diagonal 
+    int navio3_x = 0;
+    int navio3_y = 0;
+    int tamNavio3 = 4;
+
+    for (int i = 0; i < tamNavio3; i++) {
+        tabuleiro[navio3_y + i][navio3_x + i] = 3;
+    }
+
+  // 4º navio - diagonal 
+  int navio4_x = TAM - 1;
+  int navio4_y = 0;
+  int tamNavio4 = 3;
+
+  for (int i = 0; i < tamNavio4; i++) {
+      tabuleiro[navio4_y + i][navio4_x - i] = 3;
+  }
+
+  // IMPRIMINDO O TABULEIRO FINAL
+ 
+  printf("\nTabuleiro de Batalha Naval - Atualizado:\n");
+
+  printf("   ");
+  for (int i = 0; i < TAM; i++) {
+      printf(" %c ", linha[i]);
+  }
+  printf("\n");
+
+  // Imprime o tabuleiro com navios
+  for (int i = 0; i < TAM; i++) {
+      printf("%2d ", i + 1);
+      for (int j = 0; j < TAM; j++) {
+          printf(" %d ", tabuleiro[i][j]);
+      }
+      printf("\n");
+  }
+
     return 0;
 }
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
